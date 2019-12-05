@@ -18,5 +18,5 @@ COPY --chown=0 ./server /server
 WORKDIR /server
 ENTRYPOINT [ "/bin/sh", "-c", "(cd /server && node ./tictactoe.js) & (cd /app && node ./index.js) &" ]
 
-EXPOSE 8080 3001
+EXPOSE 8080 3000
 

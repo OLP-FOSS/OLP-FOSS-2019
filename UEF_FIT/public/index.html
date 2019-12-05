@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>React App</title>
+  <style>
+    body {
+      background-image: linear-gradient(-90deg,
+          rgba(256, 59, 0, 0.3),
+          rgba(251, 251, 0, 0.3));
+    }
+
+    table,
+    tr,
+    td {
+      border: 1px solid black;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    table {
+      background-color: white;
+      border-collapse: collapse;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    td:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    td {
+      height: 20px;
+      width: 20px;
+    }
+
+    .setColorO {
+      background-color: rgba(76, 175, 80, 0.5);
+    }
+
+    .setColorX {
+      background-color: #d87575;
+    }
+
+    #winner {
+      display: none;
+      text-align: center;
+      font-size: 100px;
+      position: absolute;
+      z-index: 1;
+      top: 250px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 10px black, 2px 2px 20px blue,
+        4px 4px 30px darkblue;
+    }
+
+    div {
+      padding: 10px 0px;
+      background-color: #73b342;
+      width: 150px;
+      text-align: center;
+      color: white;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 8px;
+    }
+
+    div:hover {
+      background-color: #4d9a13;
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-top: 30px;
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px red, 2px 2px 5px blue, 3px 3px 10px yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <h1>GAME CARO</h1>
+  <p id="winner">WINNER</p>
+  <p id="tokenId"></p>
+  <table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <div onclick="SetNewGame()">NEW GAME</div>
+  <div onclick="saveGameToBlockchain()" style="position: relative; top: 700px;">
+    SAVE GAME
+  </div>
+  <input id="inputTokenId" />
+  <button onclick="addXOToTable()">Nhập mã game của bạn</button>
+
+  <br />
+  <button onclick="napTienVoGiaiDau()">Nap Tien De Tham Gia Giai</button>
+
+  <br />
+  <button onclick="TatDangKigiai()">Tat Dang Ki Giai</button>
+
+  <br />
+  <input id="winnerBlockchain" />
+  <br />
+  <button onclick="ChuyenTienChoWinner()">Chuyển tổng số tiền cho cho Winner</button>
+
+  <p id="giaiThuong"></p>
+
+  <p id="message"></p>
+
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+  <script>
+    var a = [];
+    var turn = true;
+    var rows = document.getElementsByTagName("tr");
+    var cols = rows[0].getElementsByTagName("td");
+    var gameSetAddressODau = null;
+    var positionXInBLockchainODau = null;
+    var positionOInBLockchainODau = null;
+    DeclareArray();
+    function DeclareArray() {
+      for (let i = 0; i < rows.length; i++) {
+        a[i] = [];
+        for (let j = 0; j < cols.length; j++) {
+          a[i][j] = rows[i].getElementsByTagName("td")[j];
+        }
+      }
+    }
+    AddValueToArray();
+    function AddValueToArray() {
+      for (let i = 0; i < rows.length; i++) {
+        for (let j = 0; j < cols.length; j++) {
+          a[i][j].addEventListener("click", function () {
+            if (turn) {
+              if (a[i][j].innerHTML != "X" && a[i][j].innerHTML != "O") {
+                a[i][j].innerHTML = "X";
+                turn = false;
+                a[i][j].classList.add("setColorX");
+                SetTheWinCondition(i, j, "X");
+              }
+            } else {
+              if (a[i][j].innerHTML != "X" && a[i][j].innerHTML != "O") {
+                a[i][j].classList.add("setColorO");
+                a[i][j].innerHTML = "O";
+                turn = true;
+                SetTheWinCondition(i, j, "O");
+              }
+            }
+          });
+        }
+      }
+    }
+
+    //SET THE WIN CONDITION
+    function SetTheWinCondition(i, j, testCase) {
+      //XetHangNgang
+      var count = 0;
+      for (let m = j - 3; m < j + 4; m++) {
+        if (m >= 0 && m < cols.length) {
+          // console.log(i, j);
+          if (a[i][m].innerHTML == testCase) {
+            count++;
+          } else {
+            count = 0;
+          }
+          if (
+            count == 4 &&
+            (a[i][j - 4].innerHTML == testCase ||
+              a[i][j - 4].innerHTML == "") &&
+            (a[i][j + 4].innerHTML == testCase || a[i][j + 4].innerHTML == "")
+          )
+            return (document.getElementById("winner").style.display =
+              "block");
+          // else if (count == 4)
+          //   return document.getElementById('winner').style.display = 'block';
+        }
+      }
+      count = 0;
+
+      //XetHangDoc
+      for (let m = i - 3; m < i + 4; m++) {
+        // console.log(i, j);
+        if (m >= 0 && m < rows.length) {
+          // console.log(m + ":" + j, a[m][j]);
+          if (a[m][j].innerHTML == testCase) {
+            count++;
+            // console.log('count+ :' + count);
+          } else {
+            count = 0;
+            // console.log('count- :' + count);
+          }
+          if (
+            count == 4 &&
+            (a[m - 4][j].innerHTML == testCase ||
+              a[m - 4][j].innerHTML == "") &&
+            (a[m + 1][j].innerHTML == testCase || a[m + 1][j].innerHTML == "")
+          )
+            return (document.getElementById("winner").style.display =
+              "block");
+        }
+        // console.log(count);
+      }
+      // console.log(count);
+      count = 0;
+      //XetHangCheoChinh
+      for (let m = i - 3; m < i + 4; m++) {
+        // console.log("i, j: " + i, j);
+        if (
+          m >= 0 &&
+          m < rows.length &&
+          m + (j - i) < cols.length &&
+          m + (j - i) >= 0
+        ) {
+          if (a[m][m + (j - i)].innerHTML == testCase) {
+            // console.log(a[m][m + (j - i)]);
+            // console.log(m, m + (j - i));
+            count++;
+          } else {
+            count = 0;
+          }
+          if (
+            count == 4 &&
+            (a[m - 4][m + (j - i) - 4].innerHTML == testCase ||
+              a[m - 4][m + (j - i) - 4].innerHTML == "") &&
+            (a[m + 1][m + (j - i) + 1].innerHTML == testCase ||
+              a[m + 1][m + (j - i) + 1].innerHTML == "")
+          )
+            return (document.getElementById("winner").style.display =
+              "block");
+        }
+      }
+      count = 0;
+
+      //XetHangCheoPhu
+      for (let m = i - 3; m < i + 4; m++) {
+        // console.log("i, j: " + i, j);
+        if (
+          m >= 0 &&
+          m < rows.length &&
+          j + i - m < cols.length &&
+          j + i - m >= 0
+        ) {
+          if (a[m][j + i - m].innerHTML == testCase) {
+            // console.log(a[m][(j + i) - m]);
+            // console.log(m, (j + i) - m);
+            count++;
+          } else {
+            count = 0;
+          }
+          if (
+            count == 4 &&
+            (a[m + 1][j + i - m - 1].innerHTML == testCase ||
+              a[m + 1][j + i - m - 1].innerHTML == "") &&
+            (a[m - 4][j + i - m + 4].innerHTML == testCase ||
+              a[m - 4][j + i - m + 4].innerHTML == "")
+          )
+            return (document.getElementById("winner").style.display =
+              "block");
+        }
+      }
+      count = 0;
+    }
+
+    function SetNewGame() {
+      for (let i = 0; i < rows.length; i++) {
+        for (let j = 0; j < cols.length; j++) {
+          a[i][j].innerHTML = "";
+          a[i][j].classList.remove("setColorX");
+          a[i][j].classList.remove("setColorO");
+        }
+      }
+      document.getElementById("winner").style.display = "none";
+    }
+  </script>
+
+  <script>
+    const mnemonic =
+      "melody gap water world roast until between worry only ring urban air";
+    // let provider = new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/e5702e9ae7b043afa15c683f23c73cde');
+    var web3 = new Web3(web3.currentProvider);
+    const caroABI = [
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "bytes4",
+            name: "interfaceId",
+            type: "bytes4"
+          }
+        ],
+        name: "supportsInterface",
+        outputs: [
+          {
+            internalType: "bool",
+            name: "",
+            type: "bool"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "name",
+        outputs: [
+          {
+            internalType: "string",
+            name: "",
+            type: "string"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "getApproved",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            internalType: "address",
+            name: "to",
+            type: "address"
+          },
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "approve",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "totalSupply",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            internalType: "address",
+            name: "from",
+            type: "address"
+          },
+          {
+            internalType: "address",
+            name: "to",
+            type: "address"
+          },
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "transferFrom",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "address",
+            name: "owner",
+            type: "address"
+          },
+          {
+            internalType: "uint256",
+            name: "index",
+            type: "uint256"
+          }
+        ],
+        name: "tokenOfOwnerByIndex",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            internalType: "uint256[]",
+            name: "positionX",
+            type: "uint256[]"
+          },
+          {
+            internalType: "uint256[]",
+            name: "positionO",
+            type: "uint256[]"
+          }
+        ],
+        name: "saveGame",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            internalType: "address",
+            name: "from",
+            type: "address"
+          },
+          {
+            internalType: "address",
+            name: "to",
+            type: "address"
+          },
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "safeTransferFrom",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "founder",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "index",
+            type: "uint256"
+          }
+        ],
+        name: "tokenByIndex",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "ownerOf",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "getGameSetAddress",
+        outputs: [
+          {
+            internalType: "contract GameSet",
+            name: "",
+            type: "address"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "baseURI",
+        outputs: [
+          {
+            internalType: "string",
+            name: "",
+            type: "string"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "address",
+            name: "owner",
+            type: "address"
+          }
+        ],
+        name: "balanceOf",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "symbol",
+        outputs: [
+          {
+            internalType: "string",
+            name: "",
+            type: "string"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            internalType: "address",
+            name: "to",
+            type: "address"
+          },
+          {
+            internalType: "bool",
+            name: "approved",
+            type: "bool"
+          }
+        ],
+        name: "setApprovalForAll",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            internalType: "address",
+            name: "from",
+            type: "address"
+          },
+          {
+            internalType: "address",
+            name: "to",
+            type: "address"
+          },
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          },
+          {
+            internalType: "bytes",
+            name: "_data",
+            type: "bytes"
+          }
+        ],
+        name: "safeTransferFrom",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "tokenURI",
+        outputs: [
+          {
+            internalType: "string",
+            name: "",
+            type: "string"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "address",
+            name: "owner",
+            type: "address"
+          },
+          {
+            internalType: "address",
+            name: "operator",
+            type: "address"
+          }
+        ],
+        name: "isApprovedForAll",
+        outputs: [
+          {
+            internalType: "bool",
+            name: "",
+            type: "bool"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "constructor"
+      },
+      {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "from",
+            type: "address"
+          },
+          {
+            indexed: true,
+            internalType: "address",
+            name: "to",
+            type: "address"
+          },
+          {
+            indexed: true,
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "Transfer",
+        type: "event"
+      },
+      {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "owner",
+            type: "address"
+          },
+          {
+            indexed: true,
+            internalType: "address",
+            name: "approved",
+            type: "address"
+          },
+          {
+            indexed: true,
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "Approval",
+        type: "event"
+      },
+      {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "owner",
+            type: "address"
+          },
+          {
+            indexed: true,
+            internalType: "address",
+            name: "operator",
+            type: "address"
+          },
+          {
+            indexed: false,
+            internalType: "bool",
+            name: "approved",
+            type: "bool"
+          }
+        ],
+        name: "ApprovalForAll",
+        type: "event"
+      }
+    ];
+
+    var caroContract = new web3.eth.Contract(
+      caroABI,
+      "0xe62beBAe933F86B9bFb00Ae1d01fC7d634Df253F"
+    );
+
+    var gameSetABI = [
+      {
+        constant: false,
+        inputs: [
+          {
+            internalType: "uint256[]",
+            name: "Xposition",
+            type: "uint256[]"
+          },
+          {
+            internalType: "uint256[]",
+            name: "Oposition",
+            type: "uint256[]"
+          }
+        ],
+        name: "updateGame",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "getPositionOFunction",
+        outputs: [
+          {
+            internalType: "uint256[]",
+            name: "",
+            type: "uint256[]"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "getPositionXFunction",
+        outputs: [
+          {
+            internalType: "uint256[]",
+            name: "",
+            type: "uint256[]"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        name: "positionO",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        name: "positionX",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256[]",
+            name: "Xposition",
+            type: "uint256[]"
+          },
+          {
+            internalType: "uint256[]",
+            name: "Oposition",
+            type: "uint256[]"
+          }
+        ],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "constructor"
+      }
+    ];
+  </script>
+
+  <script>
+    var positionX = positionXInBLockchainODau;
+    var positionO = positionOInBLockchainODau;
+    saveGameToBlockchain = async () => {
+      if (gameSetAddressODau) {
+        var GameSet = new web3.eth.Contract(gameSetABI, gameSetAddressODau);
+        console.log(GameSet);
+        var positionX = [];
+        var positionO = [];
+        for (let i = 0; i < rows.length; i++) {
+          for (let j = 0; j < cols.length; j++) {
+            if (a[i][j].className == "setColorX") {
+              positionX.push(i);
+              positionX.push(j);
+            } else if (a[i][j].className == "setColorO") {
+              positionO.push(i);
+              positionO.push(j);
+            }
+          }
+        }
+        console.log(positionX);
+        console.log(positionO);
+        await GameSet.methods.updateGame(positionX, positionO).send({
+          from: web3.currentProvider.selectedAddress
+        });
+      } else {
+        var positionX = [];
+        var positionO = [];
+        for (let i = 0; i < rows.length; i++) {
+          for (let j = 0; j < cols.length; j++) {
+            if (a[i][j].className == "setColorX") {
+              positionX.push(i);
+              positionX.push(j);
+            } else if (a[i][j].className == "setColorO") {
+              positionO.push(i);
+              positionO.push(j);
+            }
+          }
+        }
+
+        console.log(positionX);
+        console.log(positionO);
+
+        var trans = await caroContract.methods
+          .saveGame(positionX, positionO)
+          .send({
+            from: web3.currentProvider.selectedAddress
+          });
+
+        var tokenId = await caroContract.methods.totalSupply().call();
+        console.log(tokenId);
+
+        document.getElementById("tokenId").innerHTML =
+          "Your Game Id Is " + tokenId;
+      }
+    };
+
+    addXOToTable = async () => {
+      let tokenId = document.getElementById("inputTokenId").value;
+
+      console.log(tokenId);
+      var gameSetAddress = await caroContract.methods
+        .getGameSetAddress(tokenId - 1)
+        .call();
+      gameSetAddressODau = gameSetAddress;
+
+      console.log(gameSetAddress);
+
+      var GameSet = new web3.eth.Contract(gameSetABI, gameSetAddress);
+
+      console.log(GameSet);
+
+      var positionXInBLockchain = await GameSet.methods
+        .getPositionXFunction()
+        .call();
+
+      positionXInBLockchainODau = positionXInBLockchain;
+
+      var positionOInBLockchain = await GameSet.methods
+        .getPositionOFunction()
+        .call();
+
+      positionOInBLockchainODau = positionOInBLockchain;
+      SetNewGame();
+
+      var toaDoRowCuaX = positionXInBLockchain.filter((value, index) => {
+        if (index % 2 === 0) return true;
+      });
+
+      var toaDoColCuaX = positionXInBLockchain.filter((value, index) => {
+        if (index % 2 !== 0) return true;
+      });
+
+      var toaDoRowCuaO = positionOInBLockchain.filter((value, index) => {
+        if (index % 2 === 0) return true;
+      });
+
+      var toaDoColCuaO = positionOInBLockchain.filter((value, index) => {
+        if (index % 2 !== 0) return true;
+      });
+
+      console.log(toaDoRowCuaX);
+      console.log(toaDoColCuaX);
+
+      console.log(toaDoRowCuaO);
+      console.log(toaDoColCuaO);
+
+      if (toaDoRowCuaX.length > toaDoRowCuaO.length) turn = false;
+
+      for (var i = 0; i < toaDoRowCuaX.length; i++) {
+        a[toaDoRowCuaX[i]][toaDoColCuaX[i]].innerHTML = "X";
+        a[toaDoRowCuaX[i]][toaDoColCuaX[i]].classList.add("setColorX");
+      }
+      for (var i = 0; i < toaDoRowCuaX.length; i++) {
+        a[toaDoRowCuaO[i]][toaDoColCuaO[i]].innerHTML = "O";
+        a[toaDoRowCuaO[i]][toaDoColCuaO[i]].classList.add("setColorO");
+      }
+    };
+    var giaiDauABI = [
+      {
+        constant: true,
+        inputs: [],
+        name: "getReward",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "manager",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "lastestWinner",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "defaultStatus",
+        outputs: [
+          {
+            internalType: "enum DauGiai.GiaiState",
+            name: "",
+            type: "uint8"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "getPlayers",
+        outputs: [
+          {
+            internalType: "address payable[]",
+            name: "",
+            type: "address[]"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: "endRegister",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            internalType: "address payable",
+            name: "winner",
+            type: "address"
+          }
+        ],
+        name: "pickWinner",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: "enter",
+        outputs: [],
+        payable: true,
+        stateMutability: "payable",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        name: "players",
+        outputs: [
+          {
+            internalType: "address payable",
+            name: "",
+            type: "address"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "constructor"
+      }
+    ];
+    var giaiDauContract = new web3.eth.Contract(
+      giaiDauABI,
+      "0x73477C881A23742C6d3e199B9662B706CbCd8640"
+    );
+
+    napTienVoGiaiDau = async () => {
+      await giaiDauContract.methods.enter().send({
+        from: web3.currentProvider.selectedAddress,
+        value: "100000000000000000"
+      });
+
+      document.getElementById("message").innerHTML = "Dang ki giai thanh cong"
+    };
+
+    TatDangKigiai = async () => {
+      await giaiDauContract.methods.endRegister().send({
+        from: web3.currentProvider.selectedAddress
+      });
+
+      var giaiThuong = await giaiDauContract.methods.getReward().call()
+      console.log(giaiThuong)
+
+      document.getElementById("message").innerHTML = "Đã đóng đăng kí"
+      document.getElementById("giaiThuong").innerHTML = "Tổng số giải thưởng hiện tại lên đến: " + giaiThuong + "Wei"
+
+    };
+
+    ChuyenTienChoWinner = async () => {
+      var winnerAddress = document.getElementById("winnerBlockchain").value
+
+      console.log(winnerAddress)
+
+      var giaiThuong = await giaiDauContract.methods.getReward().call()
+      console.log(giaiThuong)
+
+      await giaiDauContract.methods.pickWinner(winnerAddress).send({
+        from: web3.currentProvider.selectedAddress
+      })
+
+      document.getElementById("message").innerHTML = "Xin Chúc mừng người thắng cuộc: <br>" + winnerAddress
+    }
+  </script>
+</body>
+
+</html>

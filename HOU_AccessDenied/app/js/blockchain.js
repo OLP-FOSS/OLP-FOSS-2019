@@ -145,6 +145,16 @@ var updateSaveCount = function () {
 });
 };
 
+var getRank = function (point) {
+    if (point < 8000) {
+        return 'Tập sự';
+    } else if (point >= 8000 && point <= 18000) {
+        return 'Kỳ thủ';
+    } else if (point > 18000) {
+        return 'Kỳ vương';
+    }
+};
+
 var updateEloCount = function () {
     blockchain.get_elo(function (val) {
         try {
@@ -152,7 +162,9 @@ var updateEloCount = function () {
             var i = parseInt(val[0].c[0]);
             var j = parseInt(val[1].c[0])
             if (i >= 0 && j >= 0) {
-                $('#blockchainElo').html('player: ' + i + ', opponents: ' + j);
+                player_level = getRank(i);                
+                opponent_level = getRank(j);
+                $('#blockchainElo').html('player: ' + i + ', opponents: ' + j + '</br>' + 'Rank: player=<i>' + player_level + '</i> opponent=<i>' + opponent_level + '</i>(0-TS-8000-KT-18000-KV)');
             }
 
         } catch (e) { }

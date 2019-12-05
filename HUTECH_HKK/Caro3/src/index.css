@@ -1,0 +1,91 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.game-board {
+  margin: 0 auto;
+}
+
+
+.game-config {
+  display: block;
+  margin-bottom: 20px;
+}
+.fixed-size {
+  width: 100px;
+  display: inline-block;
+}
+.btn-bold {
+  font-weight: bold;
+}
+.square-highlight {
+  color: #00cd29;
+}
+.save-game-blockchain {
+  margin-top: 10px;
+}
+
+.footer {
+  position: fixed;
+  display: block;
+  width: 100%;
+  background: rgb(197, 197, 197);
+  text-align: center;
+  bottom: 0;
+}
+button.btn {
+  margin: 17px 0px;
+}
+
+button.btn.btn-info {
+  margin: 10px 0;
+  padding: 2px 11px;
+}
+
+button.btn {
+  margin: 2px 0px !important;
+}

@@ -1,0 +1,87 @@
+.btn-piece {
+  padding: 0;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border: 1px solid gray !important;
+  font: 1em sans-serif;
+  transition: none !important;
+}
+
+.btnX {
+  color: #e74c3c;
+}
+
+.btnO {
+  color: #3498db;
+}
+
+.btn-win {
+  background-color: #2ecc71;
+}
+
+.not-focusable:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-piece:hover {
+  background-color: #ffeaa7;
+  cursor: pointer;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+  height: 40px;
+}
+
+.footer {
+  text-align: center;
+  letter-spacing: 0.1em;
+  width: 100%;
+  background-color: #999999;
+}
+
+.input-custom {
+  margin: 150px auto;
+  display: flex;
+}
+
+.board {
+  margin: 20px auto;
+
+}
+
+.information b {
+  letter-spacing: 1px;
+}
+
+.information .title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.input-custom p {
+  margin: auto;
+}
+
+.input-custom input {
+  margin: auto;
+  min-height: 50px;
+  max-height: 50px;
+  min-width: 300px;
+  max-width: 300px;
+  text-align: center;
+  font: 1.5em sans-serif;
+}
+
+.modal-container {
+  position: relative;
+}
+
+.modal-container .modal,
+.modal-container .modal-backdrop {
+  position: absolute;
+}

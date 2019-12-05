@@ -91,3 +91,7 @@ fabric.properties
 
 # Ignore tmp/
 tmp/
+
+# Ignore IDE
+.idea
+yarn.lock

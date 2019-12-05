@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  # ganachecli: simulated test rpc on dev environment
+  ganache-cli:
+    container_name: ganache-cli
+    build:
+      context: ./ganache
+    ports:
+      - 8545:8545
+
+  # truffle-suite
+  # volumes are used here to enable hot editing :) Nice trick!
+  eth-todo:
+    container_name: eth-todo
+    build:
+      context: ./ethtodo
+    healthcheck:
+      test: curl -sf -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' localhost:8545
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    command: >
+      sh -c "            truffle compile &&
+            truffle test &&
+            truffle migrate &&
+            npm run dev"
+    ports:
+      - 3000:3000
+    tty: true

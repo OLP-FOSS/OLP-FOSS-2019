@@ -1,0 +1,3516 @@
+{
+  "contractName": "EloGame",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "eloValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "PlayerCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "completed",
+          "type": "bool"
+        }
+      ],
+      "name": "TaskCompleted",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "player",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "player1",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "player2",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "taskCountPlayer",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "createPlayer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "so",
+          "type": "uint256"
+        }
+      ],
+      "name": "startGame",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "playerWin",
+          "type": "uint256"
+        }
+      ],
+      "name": "endGame",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"eloValue\",\"type\":\"uint256\"}],\"name\":\"PlayerCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"completed\",\"type\":\"bool\"}],\"name\":\"TaskCompleted\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[],\"name\":\"createPlayer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"playerWin\",\"type\":\"uint256\"}],\"name\":\"endGame\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"player\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"player1\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"player2\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"so\",\"type\":\"uint256\"}],\"name\":\"startGame\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"taskCountPlayer\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Light/Desktop/OLP/OLPFOSS/BaiLam/OLP-FOSS-2019/UT_UT3/mydocker-ethtodo/ethtodo/contracts/EloGame.sol\":\"EloGame\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Light/Desktop/OLP/OLPFOSS/BaiLam/OLP-FOSS-2019/UT_UT3/mydocker-ethtodo/ethtodo/contracts/EloGame.sol\":{\"keccak256\":\"0x591e4afae78397abfad5eab68feda7c947bd06556d2e06c2ed7d6a3f75e9b4f3\",\"urls\":[\"bzz-raw://28399ea468adb476c4a0a11b40f10a1ac9374a48513b1af91455acfa6d0cb85a\",\"dweb:/ipfs/QmdNFhhQCtKrHMDGL676TzBxWYe8g85QtvdaPG9EnrNS4e\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600080556000600155600060025534801561001e57600080fd5b506100306001600160e01b0361003516565b6100aa565b6000805460019081018083556040805180820182528281526109606020808301828152948752600381528387209251835593519190940155925483519081529081019190915281517f12f28e1c664876c6dcd6124bcc347d61b2b4da745169cffe68eb780b5b09e8c0929181900390910190a1565b610290806100b96000396000f3fe608060405234801561001057600080fd5b506004361061007c5760003560e01c80639e0551c61161005b5780639e0551c6146100ad578063d0399bb8146100e3578063d30895e414610100578063e5ed1d59146101085761007c565b806244cf3d146100815780633fa9fcf81461009b57806359a5f12d146100a5575b600080fd5b610089610125565b60408051918252519081900360200190f35b6100a361012b565b005b6100896101a0565b6100ca600480360360208110156100c357600080fd5b50356101a6565b6040805192835260208301919091528051918290030190f35b6100a3600480360360208110156100f957600080fd5b50356101bf565b61008961023b565b6100a36004803603602081101561011e57600080fd5b5035610241565b60005481565b6000805460019081018083556040805180820182528281526109606020808301828152948752600381528387209251835593519190940155925483519081529081019190915281517f12f28e1c664876c6dcd6124bcc347d61b2b4da745169cffe68eb780b5b09e8c0929181900390910190a1565b60025481565b6003602052600090815260409020805460019091015482565b80600114156101f8576001805460009081526003602052604080822083018054840190556002548252902001805460001901905561022e565b806002141561022e5760025460009081526003602052604080822060019081018054820190558054835291200180546000190190555b5060006001819055600255565b60015481565b600154610252576001819055610258565b60028190555b5056fea265627a7a72315820decb9ae94b207f8777a174387bf61caa7ab45bc2dbc952c0ac0ab70907df2e2264736f6c634300050c0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007c5760003560e01c80639e0551c61161005b5780639e0551c6146100ad578063d0399bb8146100e3578063d30895e414610100578063e5ed1d59146101085761007c565b806244cf3d146100815780633fa9fcf81461009b57806359a5f12d146100a5575b600080fd5b610089610125565b60408051918252519081900360200190f35b6100a361012b565b005b6100896101a0565b6100ca600480360360208110156100c357600080fd5b50356101a6565b6040805192835260208301919091528051918290030190f35b6100a3600480360360208110156100f957600080fd5b50356101bf565b61008961023b565b6100a36004803603602081101561011e57600080fd5b5035610241565b60005481565b6000805460019081018083556040805180820182528281526109606020808301828152948752600381528387209251835593519190940155925483519081529081019190915281517f12f28e1c664876c6dcd6124bcc347d61b2b4da745169cffe68eb780b5b09e8c0929181900390910190a1565b60025481565b6003602052600090815260409020805460019091015482565b80600114156101f8576001805460009081526003602052604080822083018054840190556002548252902001805460001901905561022e565b806002141561022e5760025460009081526003602052604080822060019081018054820190558054835291200180546000190190555b5060006001819055600255565b60015481565b600154610252576001819055610258565b60028190555b5056fea265627a7a72315820decb9ae94b207f8777a174387bf61caa7ab45bc2dbc952c0ac0ab70907df2e2264736f6c634300050c0032",
+  "sourceMap": "27:2354:0:-;;;79:1;49:31;;107:1;85:23;;135:1;113:23;;375:48;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;403:14:0;-1:-1:-1;;;;;403:12:0;:14;:::i;:::-;27:2354;;429:172;467:15;:18;;;;;;;;;518:29;;;;;;;;;;;542:4;518:29;;;;;;;492:23;;;:6;:23;;;;;:55;;;;;;;;;;;573:15;;559:36;;;;;;;;;;;;;;;;;;;;;;;;;429:172::o;27:2354::-;;;;;;;",
+  "deployedSourceMap": "27:2354:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:2354:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:31;;;:::i;:::-;;;;;;;;;;;;;;;;429:172;;;:::i;:::-;;113:23;;;:::i;198:37::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;198:37:0;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1037:1111;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1037:1111:0;;:::i;85:23::-;;;:::i;605:124::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;605:124:0;;:::i;49:31::-;;;;:::o;429:172::-;467:15;:18;;;;;;;;;518:29;;;;;;;;;;;542:4;518:29;;;;;;;492:23;;;:6;:23;;;;;:55;;;;;;;;;;;573:15;;559:36;;;;;;;;;;;;;;;;;;;;;;;;;429:172::o;113:23::-;;;;:::o;198:37::-;;;;;;;;;;;;;;;;;;;:::o;1037:1111::-;1915:9;1928:1;1915:14;1912:195;;;1964:1;1946:7;;1939:15;;;;:6;:15;;;;;;:21;;:26;;;;;;1981:7;;1974:15;;;;:21;:26;;-1:-1:-1;;1974:26:0;;;1912:195;;;2016:9;2027:1;2016:12;2013:94;;;2045:7;;2038:15;;;;:6;:15;;;;;;2063:1;2038:21;;;:26;;;;;;2080:7;;2073:15;;;;:21;:26;;-1:-1:-1;;2073:26:0;;;2013:94;-1:-1:-1;2123:1:0;2113:7;:11;;;2131:7;:11;1037:1111::o;85:23::-;;;;:::o;605:124::-;649:7;;646:78;;671:7;:12;;;646:78;;;704:7;:12;;;646:78;605:124;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract EloGame {\r\n  uint public taskCountPlayer = 0;\r\n  uint public player1 = 0;\r\n  uint public player2 = 0;\r\n  struct Player {\r\n    uint id;\r\n    uint value;\r\n  }\r\n\r\n  mapping(uint => Player) public player;\r\n  \r\n  event PlayerCreated(\r\n    uint id,\r\n    uint eloValue\r\n  );\r\n\r\n  event TaskCompleted(\r\n    uint id,\r\n    bool completed\r\n  );\r\n\r\n  constructor() public {\r\n    createPlayer();\r\n  }\r\n\r\n  function createPlayer() public {\r\n    taskCountPlayer ++;\r\n    player[taskCountPlayer] = Player(taskCountPlayer, 2400);\r\n    emit PlayerCreated(taskCountPlayer, 2400);\r\n  }\r\n  function startGame(uint so) public{\r\n    if(player1 == 0){\r\n      player1 = so;\r\n    }else{\r\n      player2 = so;\r\n    }\r\n  }\r\n  // function _kCatulate(uint _b) public view returns(uint){\r\n  //         uint  K=0;\r\n  //         if(_b<1600) K=25;\r\n  //         else\r\n  //         if(_b<2000) K=20;\r\n  //         else\r\n  //         if(_b<2400) K=15;\r\n  //         else\r\n  //         if(_b<2400) K=10;\r\n  //         return K;\r\n  // }\r\n  function endGame(uint playerWin) public {\r\n    // uint eloA = 0;\r\n    // uint eloB = 0;\r\n    // uint check = 1;\r\n    // if(playerWin == 1){\r\n    //   eloA = player[player1].value;\r\n    //   eloB = player[player2].value;\r\n    //   uint Qa= 10**(eloA/400);\r\n    //   uint Qb= 10**(eloB/400);\r\n    //   uint Eb= Qb/(Qa+Qb); \r\n    //   uint Ea=Qa/(Qa+Qb);\r\n    //   player[player1].value = eloA + _kCatulate(check-Ea); \r\n    //   player[player2].value = eloB + _kCatulate(1-check-Eb);\r\n    // }else if(playerWin==2){\r\n    //   eloA = player[player2].value;\r\n    //   eloB = player[player1].value;\r\n    //   uint Qa=10**(eloA/400);\r\n    //   uint Qb= 10**(eloB/400);\r\n    //   uint Eb= Qb/(Qa+Qb); \r\n    //   uint Ea=Qa/(Qa+Qb);\r\n    //   player[player2].value = eloA + _kCatulate(check-Ea); \r\n    //   player[player1].value = eloB + _kCatulate(1-check-Eb);\r\n    // }\r\n   \r\n\r\n    if(playerWin == 1){\r\n      player[player1].value += 1;\r\n      player[player2].value -= 1;\r\n    }else if(playerWin==2){\r\n      player[player2].value += 1;\r\n      player[player1].value -= 1;\r\n    }\r\n    player1 = 0;\r\n    player2 = 0;\r\n  }\r\n\r\n  // function toggleCompleted(uint _id) public {\r\n  //   Task memory _task = tasks[_id];\r\n  //   // _task.completed = !_task.completed;\r\n  //   // tasks[_id] = _task;\r\n  //   emit TaskCompleted(_id, _task.completed);\r\n  // }\r\n\r\n}\r\n",
+  "sourcePath": "C:/Users/Light/Desktop/OLP/OLPFOSS/BaiLam/OLP-FOSS-2019/UT_UT3/mydocker-ethtodo/ethtodo/contracts/EloGame.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Light/Desktop/OLP/OLPFOSS/BaiLam/OLP-FOSS-2019/UT_UT3/mydocker-ethtodo/ethtodo/contracts/EloGame.sol",
+    "exportedSymbols": {
+      "EloGame": [
+        132
+      ]
+    },
+    "id": 133,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 132,
+        "linearizedBaseContracts": [
+          132
+        ],
+        "name": "EloGame",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "taskCountPlayer",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "49:31:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "49:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "79:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 7,
+            "name": "player1",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "85:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "85:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 6,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "107:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "player2",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "113:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 8,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "113:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 9,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "135:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "EloGame.Player",
+            "id": 15,
+            "members": [
+              {
+                "constant": false,
+                "id": 12,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "162:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "162:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14,
+                "name": "value",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "176:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 13,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "176:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Player",
+            "nodeType": "StructDefinition",
+            "scope": 132,
+            "src": "141:51:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 19,
+            "name": "player",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "198:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+              "typeString": "mapping(uint256 => struct EloGame.Player)"
+            },
+            "typeName": {
+              "id": 18,
+              "keyType": {
+                "id": 16,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "206:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "198:23:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                "typeString": "mapping(uint256 => struct EloGame.Player)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 17,
+                "name": "Player",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 15,
+                "src": "214:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Player_$15_storage_ptr",
+                  "typeString": "struct EloGame.Player"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 25,
+            "name": "PlayerCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "270:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "270:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23,
+                  "indexed": false,
+                  "name": "eloValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "284:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "263:39:0"
+            },
+            "src": "244:59:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 31,
+            "name": "TaskCompleted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "335:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 26,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "335:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29,
+                  "indexed": false,
+                  "name": "completed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "349:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "349:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "328:40:0"
+            },
+            "src": "309:60:0"
+          },
+          {
+            "body": {
+              "id": 37,
+              "nodeType": "Block",
+              "src": "396:27:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 34,
+                      "name": "createPlayer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 59,
+                      "src": "403:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "403:14:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "403:14:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 38,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "386:2:0"
+            },
+            "returnParameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "396:0:0"
+            },
+            "scope": 132,
+            "src": "375:48:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 58,
+              "nodeType": "Block",
+              "src": "460:141:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 42,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "467:18:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 41,
+                      "name": "taskCountPlayer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4,
+                      "src": "467:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 43,
+                  "nodeType": "ExpressionStatement",
+                  "src": "467:18:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 51,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 44,
+                        "name": "player",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19,
+                        "src": "492:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                          "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                        }
+                      },
+                      "id": 46,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 45,
+                        "name": "taskCountPlayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "499:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "492:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Player_$15_storage",
+                        "typeString": "struct EloGame.Player storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 48,
+                          "name": "taskCountPlayer",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4,
+                          "src": "525:15:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "32343030",
+                          "id": 49,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "542:4:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_2400_by_1",
+                            "typeString": "int_const 2400"
+                          },
+                          "value": "2400"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_2400_by_1",
+                            "typeString": "int_const 2400"
+                          }
+                        ],
+                        "id": 47,
+                        "name": "Player",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "518:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Player_$15_storage_ptr_$",
+                          "typeString": "type(struct EloGame.Player storage pointer)"
+                        }
+                      },
+                      "id": 50,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "518:29:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Player_$15_memory",
+                        "typeString": "struct EloGame.Player memory"
+                      }
+                    },
+                    "src": "492:55:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Player_$15_storage",
+                      "typeString": "struct EloGame.Player storage ref"
+                    }
+                  },
+                  "id": 52,
+                  "nodeType": "ExpressionStatement",
+                  "src": "492:55:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 54,
+                        "name": "taskCountPlayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "573:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "32343030",
+                        "id": 55,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "590:4:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_2400_by_1",
+                          "typeString": "int_const 2400"
+                        },
+                        "value": "2400"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_2400_by_1",
+                          "typeString": "int_const 2400"
+                        }
+                      ],
+                      "id": 53,
+                      "name": "PlayerCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 25,
+                      "src": "559:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256,uint256)"
+                      }
+                    },
+                    "id": 56,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "559:36:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 57,
+                  "nodeType": "EmitStatement",
+                  "src": "554:41:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 59,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createPlayer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 39,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "450:2:0"
+            },
+            "returnParameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "460:0:0"
+            },
+            "scope": 132,
+            "src": "429:172:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 78,
+              "nodeType": "Block",
+              "src": "639:90:0",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 66,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 64,
+                      "name": "player1",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "649:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 65,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "660:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "649:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 76,
+                    "nodeType": "Block",
+                    "src": "695:29:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 74,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 72,
+                            "name": "player2",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10,
+                            "src": "704:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 73,
+                            "name": "so",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 61,
+                            "src": "714:2:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "704:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 75,
+                        "nodeType": "ExpressionStatement",
+                        "src": "704:12:0"
+                      }
+                    ]
+                  },
+                  "id": 77,
+                  "nodeType": "IfStatement",
+                  "src": "646:78:0",
+                  "trueBody": {
+                    "id": 71,
+                    "nodeType": "Block",
+                    "src": "662:29:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 69,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 67,
+                            "name": "player1",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7,
+                            "src": "671:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 68,
+                            "name": "so",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 61,
+                            "src": "681:2:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "671:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 70,
+                        "nodeType": "ExpressionStatement",
+                        "src": "671:12:0"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 79,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "startGame",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 62,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 61,
+                  "name": "so",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79,
+                  "src": "624:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 60,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "624:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "623:9:0"
+            },
+            "returnParameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "639:0:0"
+            },
+            "scope": 132,
+            "src": "605:124:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 130,
+              "nodeType": "Block",
+              "src": "1077:1071:0",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 86,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 84,
+                      "name": "playerWin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 81,
+                      "src": "1915:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 85,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1928:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "1915:14:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "condition": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 104,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 102,
+                        "name": "playerWin",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 81,
+                        "src": "2016:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "hexValue": "32",
+                        "id": 103,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2027:1:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_2_by_1",
+                          "typeString": "int_const 2"
+                        },
+                        "value": "2"
+                      },
+                      "src": "2016:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseBody": null,
+                    "id": 120,
+                    "nodeType": "IfStatement",
+                    "src": "2013:94:0",
+                    "trueBody": {
+                      "id": 119,
+                      "nodeType": "Block",
+                      "src": "2029:78:0",
+                      "statements": [
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 110,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftHandSide": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "baseExpression": {
+                                  "argumentTypes": null,
+                                  "id": 105,
+                                  "name": "player",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 19,
+                                  "src": "2038:6:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                                    "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                                  }
+                                },
+                                "id": 107,
+                                "indexExpression": {
+                                  "argumentTypes": null,
+                                  "id": 106,
+                                  "name": "player2",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 10,
+                                  "src": "2045:7:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "IndexAccess",
+                                "src": "2038:15:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_Player_$15_storage",
+                                  "typeString": "struct EloGame.Player storage ref"
+                                }
+                              },
+                              "id": 108,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "memberName": "value",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 14,
+                              "src": "2038:21:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "Assignment",
+                            "operator": "+=",
+                            "rightHandSide": {
+                              "argumentTypes": null,
+                              "hexValue": "31",
+                              "id": 109,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "2063:1:0",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              },
+                              "value": "1"
+                            },
+                            "src": "2038:26:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 111,
+                          "nodeType": "ExpressionStatement",
+                          "src": "2038:26:0"
+                        },
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 117,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftHandSide": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "baseExpression": {
+                                  "argumentTypes": null,
+                                  "id": 112,
+                                  "name": "player",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 19,
+                                  "src": "2073:6:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                                    "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                                  }
+                                },
+                                "id": 114,
+                                "indexExpression": {
+                                  "argumentTypes": null,
+                                  "id": 113,
+                                  "name": "player1",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 7,
+                                  "src": "2080:7:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "IndexAccess",
+                                "src": "2073:15:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_Player_$15_storage",
+                                  "typeString": "struct EloGame.Player storage ref"
+                                }
+                              },
+                              "id": 115,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "memberName": "value",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 14,
+                              "src": "2073:21:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "Assignment",
+                            "operator": "-=",
+                            "rightHandSide": {
+                              "argumentTypes": null,
+                              "hexValue": "31",
+                              "id": 116,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "2098:1:0",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              },
+                              "value": "1"
+                            },
+                            "src": "2073:26:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 118,
+                          "nodeType": "ExpressionStatement",
+                          "src": "2073:26:0"
+                        }
+                      ]
+                    }
+                  },
+                  "id": 121,
+                  "nodeType": "IfStatement",
+                  "src": "1912:195:0",
+                  "trueBody": {
+                    "id": 101,
+                    "nodeType": "Block",
+                    "src": "1930:78:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 92,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 87,
+                                "name": "player",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 19,
+                                "src": "1939:6:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                                  "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                                }
+                              },
+                              "id": 89,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "id": 88,
+                                "name": "player1",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 7,
+                                "src": "1946:7:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1939:15:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Player_$15_storage",
+                                "typeString": "struct EloGame.Player storage ref"
+                              }
+                            },
+                            "id": 90,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "value",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 14,
+                            "src": "1939:21:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "+=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "hexValue": "31",
+                            "id": 91,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1964:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          "src": "1939:26:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 93,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1939:26:0"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 99,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 94,
+                                "name": "player",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 19,
+                                "src": "1974:6:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                                  "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                                }
+                              },
+                              "id": 96,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "id": 95,
+                                "name": "player2",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 10,
+                                "src": "1981:7:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1974:15:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Player_$15_storage",
+                                "typeString": "struct EloGame.Player storage ref"
+                              }
+                            },
+                            "id": 97,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "value",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 14,
+                            "src": "1974:21:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "-=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "hexValue": "31",
+                            "id": 98,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1999:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          "src": "1974:26:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 100,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1974:26:0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 124,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 122,
+                      "name": "player1",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "2113:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 123,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2123:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "2113:11:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 125,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2113:11:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 126,
+                      "name": "player2",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "2131:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 127,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2141:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "2131:11:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2131:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 131,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "endGame",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 82,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 81,
+                  "name": "playerWin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "1054:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 80,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1054:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1053:16:0"
+            },
+            "returnParameters": {
+              "id": 83,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1077:0:0"
+            },
+            "scope": 132,
+            "src": "1037:1111:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 133,
+        "src": "27:2354:0"
+      }
+    ],
+    "src": "0:2383:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Light/Desktop/OLP/OLPFOSS/BaiLam/OLP-FOSS-2019/UT_UT3/mydocker-ethtodo/ethtodo/contracts/EloGame.sol",
+    "exportedSymbols": {
+      "EloGame": [
+        132
+      ]
+    },
+    "id": 133,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 132,
+        "linearizedBaseContracts": [
+          132
+        ],
+        "name": "EloGame",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "taskCountPlayer",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "49:31:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "49:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "79:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 7,
+            "name": "player1",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "85:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "85:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 6,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "107:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "player2",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "113:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 8,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "113:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 9,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "135:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "EloGame.Player",
+            "id": 15,
+            "members": [
+              {
+                "constant": false,
+                "id": 12,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "162:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "162:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14,
+                "name": "value",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "176:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 13,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "176:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Player",
+            "nodeType": "StructDefinition",
+            "scope": 132,
+            "src": "141:51:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 19,
+            "name": "player",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "198:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+              "typeString": "mapping(uint256 => struct EloGame.Player)"
+            },
+            "typeName": {
+              "id": 18,
+              "keyType": {
+                "id": 16,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "206:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "198:23:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                "typeString": "mapping(uint256 => struct EloGame.Player)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 17,
+                "name": "Player",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 15,
+                "src": "214:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Player_$15_storage_ptr",
+                  "typeString": "struct EloGame.Player"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 25,
+            "name": "PlayerCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "270:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "270:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23,
+                  "indexed": false,
+                  "name": "eloValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "284:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "263:39:0"
+            },
+            "src": "244:59:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 31,
+            "name": "TaskCompleted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "335:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 26,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "335:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29,
+                  "indexed": false,
+                  "name": "completed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "349:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "349:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "328:40:0"
+            },
+            "src": "309:60:0"
+          },
+          {
+            "body": {
+              "id": 37,
+              "nodeType": "Block",
+              "src": "396:27:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 34,
+                      "name": "createPlayer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 59,
+                      "src": "403:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "403:14:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "403:14:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 38,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "386:2:0"
+            },
+            "returnParameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "396:0:0"
+            },
+            "scope": 132,
+            "src": "375:48:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 58,
+              "nodeType": "Block",
+              "src": "460:141:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 42,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "467:18:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 41,
+                      "name": "taskCountPlayer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4,
+                      "src": "467:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 43,
+                  "nodeType": "ExpressionStatement",
+                  "src": "467:18:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 51,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 44,
+                        "name": "player",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19,
+                        "src": "492:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                          "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                        }
+                      },
+                      "id": 46,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 45,
+                        "name": "taskCountPlayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "499:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "492:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Player_$15_storage",
+                        "typeString": "struct EloGame.Player storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 48,
+                          "name": "taskCountPlayer",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4,
+                          "src": "525:15:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "32343030",
+                          "id": 49,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "542:4:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_2400_by_1",
+                            "typeString": "int_const 2400"
+                          },
+                          "value": "2400"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_2400_by_1",
+                            "typeString": "int_const 2400"
+                          }
+                        ],
+                        "id": 47,
+                        "name": "Player",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "518:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Player_$15_storage_ptr_$",
+                          "typeString": "type(struct EloGame.Player storage pointer)"
+                        }
+                      },
+                      "id": 50,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "518:29:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Player_$15_memory",
+                        "typeString": "struct EloGame.Player memory"
+                      }
+                    },
+                    "src": "492:55:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Player_$15_storage",
+                      "typeString": "struct EloGame.Player storage ref"
+                    }
+                  },
+                  "id": 52,
+                  "nodeType": "ExpressionStatement",
+                  "src": "492:55:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 54,
+                        "name": "taskCountPlayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "573:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "32343030",
+                        "id": 55,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "590:4:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_2400_by_1",
+                          "typeString": "int_const 2400"
+                        },
+                        "value": "2400"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_2400_by_1",
+                          "typeString": "int_const 2400"
+                        }
+                      ],
+                      "id": 53,
+                      "name": "PlayerCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 25,
+                      "src": "559:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256,uint256)"
+                      }
+                    },
+                    "id": 56,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "559:36:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 57,
+                  "nodeType": "EmitStatement",
+                  "src": "554:41:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 59,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createPlayer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 39,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "450:2:0"
+            },
+            "returnParameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "460:0:0"
+            },
+            "scope": 132,
+            "src": "429:172:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 78,
+              "nodeType": "Block",
+              "src": "639:90:0",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 66,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 64,
+                      "name": "player1",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "649:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 65,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "660:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "649:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 76,
+                    "nodeType": "Block",
+                    "src": "695:29:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 74,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 72,
+                            "name": "player2",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10,
+                            "src": "704:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 73,
+                            "name": "so",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 61,
+                            "src": "714:2:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "704:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 75,
+                        "nodeType": "ExpressionStatement",
+                        "src": "704:12:0"
+                      }
+                    ]
+                  },
+                  "id": 77,
+                  "nodeType": "IfStatement",
+                  "src": "646:78:0",
+                  "trueBody": {
+                    "id": 71,
+                    "nodeType": "Block",
+                    "src": "662:29:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 69,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 67,
+                            "name": "player1",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7,
+                            "src": "671:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 68,
+                            "name": "so",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 61,
+                            "src": "681:2:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "671:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 70,
+                        "nodeType": "ExpressionStatement",
+                        "src": "671:12:0"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 79,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "startGame",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 62,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 61,
+                  "name": "so",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79,
+                  "src": "624:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 60,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "624:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "623:9:0"
+            },
+            "returnParameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "639:0:0"
+            },
+            "scope": 132,
+            "src": "605:124:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 130,
+              "nodeType": "Block",
+              "src": "1077:1071:0",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 86,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 84,
+                      "name": "playerWin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 81,
+                      "src": "1915:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 85,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1928:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "1915:14:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "condition": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 104,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 102,
+                        "name": "playerWin",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 81,
+                        "src": "2016:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "hexValue": "32",
+                        "id": 103,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2027:1:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_2_by_1",
+                          "typeString": "int_const 2"
+                        },
+                        "value": "2"
+                      },
+                      "src": "2016:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseBody": null,
+                    "id": 120,
+                    "nodeType": "IfStatement",
+                    "src": "2013:94:0",
+                    "trueBody": {
+                      "id": 119,
+                      "nodeType": "Block",
+                      "src": "2029:78:0",
+                      "statements": [
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 110,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftHandSide": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "baseExpression": {
+                                  "argumentTypes": null,
+                                  "id": 105,
+                                  "name": "player",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 19,
+                                  "src": "2038:6:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                                    "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                                  }
+                                },
+                                "id": 107,
+                                "indexExpression": {
+                                  "argumentTypes": null,
+                                  "id": 106,
+                                  "name": "player2",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 10,
+                                  "src": "2045:7:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "IndexAccess",
+                                "src": "2038:15:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_Player_$15_storage",
+                                  "typeString": "struct EloGame.Player storage ref"
+                                }
+                              },
+                              "id": 108,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "memberName": "value",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 14,
+                              "src": "2038:21:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "Assignment",
+                            "operator": "+=",
+                            "rightHandSide": {
+                              "argumentTypes": null,
+                              "hexValue": "31",
+                              "id": 109,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "2063:1:0",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              },
+                              "value": "1"
+                            },
+                            "src": "2038:26:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 111,
+                          "nodeType": "ExpressionStatement",
+                          "src": "2038:26:0"
+                        },
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 117,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftHandSide": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "baseExpression": {
+                                  "argumentTypes": null,
+                                  "id": 112,
+                                  "name": "player",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 19,
+                                  "src": "2073:6:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                                    "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                                  }
+                                },
+                                "id": 114,
+                                "indexExpression": {
+                                  "argumentTypes": null,
+                                  "id": 113,
+                                  "name": "player1",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 7,
+                                  "src": "2080:7:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "IndexAccess",
+                                "src": "2073:15:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_Player_$15_storage",
+                                  "typeString": "struct EloGame.Player storage ref"
+                                }
+                              },
+                              "id": 115,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "memberName": "value",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 14,
+                              "src": "2073:21:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "Assignment",
+                            "operator": "-=",
+                            "rightHandSide": {
+                              "argumentTypes": null,
+                              "hexValue": "31",
+                              "id": 116,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "2098:1:0",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              },
+                              "value": "1"
+                            },
+                            "src": "2073:26:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 118,
+                          "nodeType": "ExpressionStatement",
+                          "src": "2073:26:0"
+                        }
+                      ]
+                    }
+                  },
+                  "id": 121,
+                  "nodeType": "IfStatement",
+                  "src": "1912:195:0",
+                  "trueBody": {
+                    "id": 101,
+                    "nodeType": "Block",
+                    "src": "1930:78:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 92,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 87,
+                                "name": "player",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 19,
+                                "src": "1939:6:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                                  "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                                }
+                              },
+                              "id": 89,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "id": 88,
+                                "name": "player1",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 7,
+                                "src": "1946:7:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1939:15:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Player_$15_storage",
+                                "typeString": "struct EloGame.Player storage ref"
+                              }
+                            },
+                            "id": 90,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "value",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 14,
+                            "src": "1939:21:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "+=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "hexValue": "31",
+                            "id": 91,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1964:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          "src": "1939:26:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 93,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1939:26:0"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 99,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 94,
+                                "name": "player",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 19,
+                                "src": "1974:6:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Player_$15_storage_$",
+                                  "typeString": "mapping(uint256 => struct EloGame.Player storage ref)"
+                                }
+                              },
+                              "id": 96,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "id": 95,
+                                "name": "player2",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 10,
+                                "src": "1981:7:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1974:15:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Player_$15_storage",
+                                "typeString": "struct EloGame.Player storage ref"
+                              }
+                            },
+                            "id": 97,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "value",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 14,
+                            "src": "1974:21:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "-=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "hexValue": "31",
+                            "id": 98,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1999:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          "src": "1974:26:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 100,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1974:26:0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 124,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 122,
+                      "name": "player1",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "2113:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 123,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2123:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "2113:11:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 125,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2113:11:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 126,
+                      "name": "player2",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "2131:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 127,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2141:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "2131:11:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2131:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 131,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "endGame",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 82,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 81,
+                  "name": "playerWin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "1054:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 80,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1054:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1053:16:0"
+            },
+            "returnParameters": {
+              "id": 83,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1077:0:0"
+            },
+            "scope": 132,
+            "src": "1037:1111:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 133,
+        "src": "27:2354:0"
+      }
+    ],
+    "src": "0:2383:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0x12f28e1c664876c6dcd6124bcc347d61b2b4da745169cffe68eb780b5b09e8c0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "eloValue",
+              "type": "uint256"
+            }
+          ],
+          "name": "PlayerCreated",
+          "type": "event",
+          "signature": "0x12f28e1c664876c6dcd6124bcc347d61b2b4da745169cffe68eb780b5b09e8c0"
+        },
+        "0xe21fa966ca5cd02748c0752352d18c48165e61cb55b4c29cccf924b5a95fcff1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "completed",
+              "type": "bool"
+            }
+          ],
+          "name": "TaskCompleted",
+          "type": "event",
+          "signature": "0xe21fa966ca5cd02748c0752352d18c48165e61cb55b4c29cccf924b5a95fcff1"
+        }
+      },
+      "links": {},
+      "address": "0x971095741747f92636512856F883108B36A64125",
+      "transactionHash": "0xd76536d7880733a7d431967f148a13ac7b66ee5bb2a645c398420be489197d8b"
+    }
+  },
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2019-12-05T07:24:37.754Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

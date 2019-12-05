@@ -1,0 +1,32 @@
+body {
+    margin-top: 10px;
+    background-color: #DDD;
+}
+
+.status {
+    font-size: 1.5em;
+    color: red;
+}
+
+.active {
+    background-color: green;
+}
+
+.current {
+    font-weight: bold;
+    text-align: center;
+}
+
+li {
+    background-color: red;
+}
+
+#messagePanel, #statusPanel, #loadingTxt, #leaveBtn, ul {
+    display: none;
+}
+
+#footer {
+    font-size: 12px;
+    text-align: center;
+    color: #999;
+}

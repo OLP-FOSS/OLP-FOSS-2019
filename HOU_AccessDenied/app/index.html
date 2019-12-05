@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe</title>
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body onLoad="init();">
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <canvas id="mainCanvas"></canvas>
+            <div class="row" id="footer">
+                <em>orig by <a href="https://twitter.com/nquocnghia" title="nquocnghia on Twitter">nquocnghia</a>&nbsp;<a href="https://opensource.org/licenses/MIT" title="MIT license">MIT license</a>&nbsp;(modified by <a href="#">HOU_AccessDenied></a>)</em>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p id="loadingTxt" class="text-center">Waiting for available player...</p>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Nickname" id="nameTxt">
+                        <label for="typeTxt">Type: </>
+                        <select id="typeTxt" class="form-control">
+                            <option value="1" selected>Freestyle</option>
+                            <option value="3">3 rounds</option>
+                            <option value="5">5 rounds</option>
+                            <option value="9">9 rounds</option>
+                        </select>
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" id="joinBtn">JOIN GAME</button>
+                        </span>
+                    </div>
+                    <ul class="list-group">
+                        <li id="playerX" class="list-group-item list-group-item-danger">[X] waiting...</li>
+                        <li id="playerO" class="list-group-item list-group-item-danger">[O] waiting...</li>
+                    </ul>
+                    <button class="btn btn-block btn-danger" type="button" id="leaveBtn">Leave..</button>
+                </div>
+            </div>
+            <div id="statusPanel" class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Status &nbsp;-&nbsp; <span id="timeInfo">00:00:00</span> &nbsp;-&nbsp; <i id="countingInfo">00:00</i></h3>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        Saved matches: <span id="blockchainCount">none</span>
+                        <br/>
+                        <button class="btn btn-default" type="button" id="saveBtn">Save (blockchain)</button>
+                        <button class="btn btn-default" type="button" id="deleteBtn">Delete</button>
+                        <br/>
+                        <button class="btn btn-defau" type="button" id="loadBtn">Load (blockchain)</button>
+                        <hr />
+                        ELO score:
+                        <br/>
+                        <span id="blockchainElo">none</span>
+                        <br />
+                        <hr />
+                        <center>
+                            <a href="javascript:;" onclick="updateSaveCount();updateEloCount();">refresh</a>
+                        </center>
+                    </center>
+                </div>
+            </div>
+            <div id="messagePanel" class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Chat</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea id="logPanel" class="form-control" rows="10" disabled="disabled"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="type your message..." id="messageTxt">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" id="sendBtn">send</button>
+                                    </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/easeljs.min.js"></script>
+<script src="js/vendor/web3.min.js"></script>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/net.js"></script>
+<script src="js/blockchain.js"></script>
+</body>
+</html>
